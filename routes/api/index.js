@@ -3,6 +3,8 @@ const fs = require("fs"); //filereader
 const util = require("util"); //util
 const readFile = util.promisify(fs.readFile); //turns readFile into a promise, as recommended by tutor
 const path = require('path');
+const uuid = require(path.join(__dirname, "../../helpers/uuid"));
+
 
 
 //function getNotes
@@ -24,7 +26,8 @@ router.post("/notes", (req, res) => {
         if(title && text){
             const newNote = { //create a new note (TODO: needs identifier...)
                 title,
-                text
+                text,
+                id: uuid()
             }
             notesArr.push(newNote); //pushes the new note onto the list
         }else{ //there already appears to be a safeguard in the html (or at least within the code already given), putting this here just in case.
