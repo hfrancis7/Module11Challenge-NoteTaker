@@ -3,7 +3,7 @@ const fs = require("fs"); //filereader
 const util = require("util"); //util
 const readFile = util.promisify(fs.readFile); //turns readFile into a promise, as recommended by tutor
 const path = require('path');
-const uuid = require(path.join(__dirname, "../../helpers/uuid"));
+const uuid = require(path.join(__dirname, "../../helpers/uuid")); //helper from previous activity (module 11, activity 9)
 
 
 
@@ -38,9 +38,33 @@ router.post("/notes", (req, res) => {
 
         //writes the notes information into the json file (Not formatted though... wonder if that matters?)
         fs.writeFile("db/db.json", notesStr, (err) =>
-        err ? console.error(err) : console.log('\nSuccess.\n'));
+        err ? console.error(err) : console.log('\nAdded New note\n'));
         
         res.redirect('back'); //refreshes the page to display the new note created
     });
+})
+
+//delete notes
+router.delete("/notes/:id", (req, res) => {
+    const id_del = req.params.id; //id of deleted
+    getNotes().then(notes => {
+        notes.forEach(note => { //go through all notes
+            if(note.id == id_del){ //when find note with id to be deleted
+                const index = notes.indexOf(note); //get the index of that note in the json arr
+                if(index > -1){ //cautionary if its found
+                    notes.splice(index, 1); //splice it out of the array
+                }else{
+                    alert("Internal error: id of note not found");
+                }
+            }
+        })
+        let notesStr = JSON.stringify(notes); //turn json into str
+        
+        //write new db.json file
+        fs.writeFile("db/db.json", notesStr, (err) =>
+        err ? console.error(err) : console.log('\nDeleted note id ' + id_del + '\n'));
+
+        res.redirect('back'); //refreshes the page to display the new note deleted
+    })
 })
 module.exports = router;
