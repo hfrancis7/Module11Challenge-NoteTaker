@@ -7,7 +7,7 @@
   
   This project allows you to create notes, which are saved in a side-bar that can be viewed later. Notes can also be viewed when clicked on as well as deleted.
   
-  This exercise was my first delve into building routes in Express and giving an app functionality using an Express server.
+  This exercise was my first delve into building routes in Express and giving an app functionality using an Express server. It is deployed using Heroku.
   
   ## Table of Contents
   
