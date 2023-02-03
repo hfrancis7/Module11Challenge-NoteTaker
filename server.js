@@ -10,6 +10,6 @@ app.use(express.static("public")); //use express static public
 app.use(routes); //use all routes
 
 //open the server
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log("Listening on http://localhost:" + PORT);
 })
