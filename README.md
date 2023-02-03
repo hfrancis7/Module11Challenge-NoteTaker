@@ -13,17 +13,27 @@
   
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Deployed Link](#deployed-link)
   - [License](#license)
   - [Questions](#questions)
   
+  
   ## Installation
   
-  ./
+  N/A
   
   ## Usage
   
-  ./
-  
+  - Clicking on the "Get Started" Button will take you to the Notes page.
+  - Fill in the "Note Title" and "Note Text" section. Once you do, a "Save" icon will appear on the top right of the screen. Clicking that button will save your note, which you can see on the left side of the screen.
+  - Clicking on the note's title on the left side of the screen will bring up that note's saved information.
+  - Clicking on the red garbage can next to the title of the note will delete the note from the list.
+
+  ## Deployed Link
+
+  https://safe-plains-89885.herokuapp.com/
+
+
   ## License
   This project is covered by the following license: 
   [MIT License](https://choosealicense.com/licenses/mit/)
