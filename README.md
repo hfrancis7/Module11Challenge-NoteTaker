@@ -35,13 +35,13 @@
 
 
   ## License
-  This project is covered by the following license: 
+  This project is covered by the following license: <br>
   [MIT License](https://choosealicense.com/licenses/mit/)
   
   ## Questions
   
-  If you have any questions about this project, here's how to contact me:
+  If you have any questions about this project, here's how to contact me: 
   
-  Github: https://github.com/hfrancis7
+  Github: https://github.com/hfrancis7 <br>
   Email: hfran7@yahoo.com
   
